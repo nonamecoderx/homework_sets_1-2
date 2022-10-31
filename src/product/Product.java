@@ -1,7 +1,6 @@
 package product;
 
 import java.util.Objects;
-
 public class Product {
     private final String name;
     private final float price;

@@ -1,7 +1,6 @@
 import product.Product;
 import product.ProductList;
 import product.Recipe;
-
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;

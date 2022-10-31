@@ -32,7 +32,6 @@ public class Recipe {
     public Set<Product> getProducts() {
         return products;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
