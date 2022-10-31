@@ -1,6 +1,9 @@
 import product.Product;
 import product.ProductList;
 import product.Recipe;
+import table.Table;
+import table.Task;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;
@@ -22,6 +25,10 @@ public class Main {
         Recipe recipe = new Recipe("Rec1", Set.of(meat, fish));
 
         nubmersSetRemoveEven();
+        Table table = new Table();
+        System.out.println(table);
+
+
     }
 
     //                  Задание 2-2
@@ -43,4 +50,6 @@ public class Main {
         }
         System.out.println(numbers);
     }
+
+
 }
