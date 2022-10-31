@@ -9,7 +9,7 @@ public class Recipe {
 
 
     public Recipe(String name, Set<Product> products) {
-        if (name==null||name.isBlank()||products ==null||products.size()==0){
+        if (name == null || name.isBlank() || products == null || products.size() == 0) {
             throw new IllegalArgumentException("Не вся информация");
         }
         this.name = name;
@@ -20,11 +20,11 @@ public class Recipe {
         return name;
     }
 
-    public float getRecipePrice(){
-        float sum=0;
-        for (Product product:products){
-            sum+=product.getPrice();
-                    }
+    public float getRecipePrice() {
+        float sum = 0;
+        for (Product product : products) {
+            sum += product.getPrice();
+        }
         return sum;
     }
 

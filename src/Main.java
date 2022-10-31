@@ -20,11 +20,12 @@ public class Main {
         productList.addProduct(tomato);
         System.out.println(productList);
 
-        Recipe recipe = new Recipe("Rec1", Set.of(meat,fish));
+        Recipe recipe = new Recipe("Rec1", Set.of(meat, fish));
 
         nubmersSetRemoveEven();
     }
-//                  Задание 2-2
+
+    //                  Задание 2-2
 //        Создайте множество целых чисел. Заполните множество 20 случайными числами в диапазоне от 0 до 1000.
 //        Пройдитесь по всем элементам множества и удалите из него все нечетные значения. Выведите оставшиеся элементы в консоль.
     private static void nubmersSetRemoveEven() {
