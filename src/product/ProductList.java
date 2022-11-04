@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class ProductList {
     private final HashMap<Product, Integer> products = new HashMap<>();
+
     public void addProduct(Product product, Integer quantity) {
         if (product == null) {
             return;
