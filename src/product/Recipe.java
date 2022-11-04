@@ -23,7 +23,7 @@ public class Recipe {
     public float getRecipePrice() {
         float sum = 0;
         for (Product product : products) {
-            sum += product.getPrice();
+            sum += product.getPrice()* product.getQuantity();
         }
         return sum;
     }

@@ -1,40 +1,43 @@
 package product;
 
-import product.Product;
-import product.ProductAlreadyExistsException;
-
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Set;
+import java.util.Map;
 
 public class ProductList {
-    private final Set<Product> products = new HashSet<>();
+    private final HashMap<Product, Integer> products = new HashMap<>();
 
-    public void addProduct(Product product) {
+    public void addProduct(Product product, Integer quantity) {
         if (product == null) {
             return;
         }
 
-        if (this.products.contains(product)) {
+        if (this.products.containsKey(product)) {
             throw new ProductAlreadyExistsException();
-        } else {
-            this.products.add(product);
         }
+
+        if (quantity <= 0) {
+            quantity = 1;
+        }
+
+        this.products.put(product, quantity);
+
     }
+
     public void checkProduct(String name) {
-        for (Product product : this.products) {
-            if ((product.getName().equals(name))) {
+        for (Product product : products.keySet()) {
+            if ((product.getName().contains(name))) {
                 product.setChecked();
                 break;
             }
         }
     }
 
-    public void removeProduct(String name) {
-        Iterator<Product> productsIterator = this.products.iterator();
-        while (productsIterator.hasNext()) {
-            if (productsIterator.next().getName().equals(name)) {
-                productsIterator.remove();
+    public void removeProduct(Product product) {
+        Iterator<Map.Entry<Product, Integer>> productIterator = products.entrySet().iterator();
+        while (productIterator.hasNext()) {
+            if (productIterator.next().getKey().getName().equals(product.getName())) {
+                productIterator.remove();
                 break;
             }
         }
@@ -43,10 +46,12 @@ public class ProductList {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Список продуктов").append('\n');
-        for (Product product : this.products) {
+        for (Product product : products.keySet()) {
             stringBuilder.append(product).append('\n');
         }
         return stringBuilder.toString();
     }
 
+    public void addProduct(Product meat) {
+    }
 }
